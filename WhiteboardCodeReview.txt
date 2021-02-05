@@ -1,0 +1,9 @@
+const compressThis = (input) => { // only passing in string
+      return input.split("").reduce(function(occurance, char) { // will split each character, then use reduce to count instances
+        occurance[char] = (occurance[char] || 0) + 1; // starting at 0, .reduce will count each instance of char
+        return occurance;
+      }, {}); // return key value pairs, key being char, value being # of occurances
+    };
+
+const test1 = "aaabccdddda";
+console.log(compressThis(test1)); // function's output { a: 4, b: 1, c: 2, d: 4}
